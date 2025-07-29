@@ -27,14 +27,13 @@ RUN set -x \
 		steamcmd \
   && useradd -ms /bin/bash ${USER}
 
-USER ${USER}
-WORKDIR /home/${USER}
-RUN set -x \
-  && touch iamherenow \
-	&& "$STEAMCMDDIR" +force_install_dir "$STEAMAPPDIR" +login anonymous +app_update "$STEAMAPPID" +quit
-
-EXPOSE 2456/tcp \
-	2456/udp \
-	2457/udp 
-  
+# USER ${USER}
+# WORKDIR /home/${USER}
+# RUN set -x \
+#   && touch iamherenow \
+# 	&& "$STEAMCMDDIR" +force_install_dir "$STEAMAPPDIR" +login anonymous +app_update "$STEAMAPPID" +quit
+# 
+# EXPOSE 2456/tcp \
+# 	2456/udp \
+# 	2457/udp
 
